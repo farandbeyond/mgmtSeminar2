@@ -2,27 +2,43 @@
 {
     internal class Program
     {
+        enum STATS
+        {
+            Agility,
+            Strength,
+            Vigour,
+            Perception,
+            Intellect,
+            Will
+        }
+
         static void Main(string[] args)
         {
             //Console.WriteLine("Hello, World!");
-
+            
             //variables representing the character
             string characterName;
-            int Agility;
-            int Strength;
-            int Vigour;
-            int Perception;
-            int Intellect;
-            int Will;
-
+            
             int[] stats;
+            //int Agility;
+            //int Strength;
+            //int Vigour;
+            //int Perception;
+            //int Intellect;
+            //int Will;
+
+
+
             //stats[int value] starting at 0
             //stats = 10; (this would cause an error)
             //stats[0] = 10; (this causes the first value in the stats array to become 10
             //console.writeling(stats[0]) prints 10 to the console.
+
+            //[0,0,0,0,0,0];
+            stats = new int[6];
             
-            
-            
+            //Console.WriteLine(stats[6]);
+
             //prompt the user for the Name
             Console.WriteLine("Enter Character Name: ");
             characterName = Console.ReadLine();
@@ -44,48 +60,62 @@
 
             // i++; is the same as writing i += 1;
 
-            for (int i = 0; i< 5; i++)
+            Console.WriteLine(stats[0]);
+            Console.WriteLine(stats[1]);
+            Console.WriteLine(stats[2]);
+            Console.WriteLine(stats[3]);
+            Console.WriteLine(stats[4]);
+            Console.WriteLine(stats[5]);
+
+            for (int i = 0; i < 6; i++)
             {
                 Console.WriteLine("Enter Character Agility: ");
-                Agility = Convert.ToInt32(Console.ReadLine());
-                Agility = Math.Clamp(Agility, 15, 50);
+                stats[i] = Convert.ToInt32(Console.ReadLine());
+                stats[i] = Math.Clamp(stats[i], 15, 50);
             }
 
+            Console.WriteLine(stats[0]);
+            Console.WriteLine(stats[1]);
+            Console.WriteLine(stats[2]);
+            Console.WriteLine(stats[3]);
+            Console.WriteLine(stats[4]);
+            Console.WriteLine(stats[5]);
+
             //Console.WriteLine("Hello!");
             //Console.WriteLine("Hello!");
             //Console.WriteLine("Hello!");
             //Console.WriteLine("Hello!");
             //Console.WriteLine("Hello!");
 
-            //prompt the user for the character stats (Agility)
-            Console.WriteLine("Enter Character Agility: ");
-            Agility = Convert.ToInt32(Console.ReadLine());
-            Agility = Math.Clamp(Agility, 15, 50);
+            ////prompt the user for the character stats (Agility)
+            //Console.WriteLine("Enter Character Agility: ");
+            //Agility = Convert.ToInt32(Console.ReadLine());
+            //Agility = Math.Clamp(Agility, 15, 50);
 
-            //prompt the user for the character stats (Strength)
-            Console.WriteLine("Enter Character Strength: ");
-            Strength = Convert.ToInt32(Console.ReadLine());
-            Strength = Math.Clamp(Strength, 15, 50);
+            ////prompt the user for the character stats (Strength)
+            //Console.WriteLine("Enter Character Strength: ");
+            //Strength = Convert.ToInt32(Console.ReadLine());
+            //Strength = Math.Clamp(Strength, 15, 50);
 
-            //prompt the user for the character stats (Vigour)
-            Console.WriteLine("Enter Character Vigour: ");
-            Vigour = Convert.ToInt32(Console.ReadLine());
-            Vigour = Math.Clamp(Vigour, 15, 50);
+            ////prompt the user for the character stats (Vigour)
+            //Console.WriteLine("Enter Character Vigour: ");
+            //Vigour = Convert.ToInt32(Console.ReadLine());
+            //Vigour = Math.Clamp(Vigour, 15, 50);
 
-            //prompt the user for the character stats (Perception)
-            Console.WriteLine("Enter Character Perception: ");
-            Perception = Convert.ToInt32(Console.ReadLine());
-            Perception = Math.Clamp(Perception, 15, 50);
+            ////prompt the user for the character stats (Perception)
+            //Console.WriteLine("Enter Character Perception: ");
+            //Perception = Convert.ToInt32(Console.ReadLine());
+            //Perception = Math.Clamp(Perception, 15, 50);
 
-            //prompt the user for the character stats (Intellect)
-            Console.WriteLine("Enter Character Intellect: ");
-            Intellect = Convert.ToInt32(Console.ReadLine());
-            Intellect = Math.Clamp(Intellect, 15, 50);
+            ////prompt the user for the character stats (Intellect)
+            //Console.WriteLine("Enter Character Intellect: ");
+            //Intellect = Convert.ToInt32(Console.ReadLine());
+            //Intellect = Math.Clamp(Intellect, 15, 50);
 
-            //prompt the user for the character stats (Will)
-            Console.WriteLine("Enter Character Will: ");
-            Will = Convert.ToInt32(Console.ReadLine());
-            Will = Math.Clamp(Will, 15, 50);
+            ////prompt the user for the character stats (Will)
+            //Console.WriteLine("Enter Character Will: ");
+            //Will = Convert.ToInt32(Console.ReadLine());
+            //Will = Math.Clamp(Will, 15, 50);
 
             //secondary attributes
             int Awareness;
@@ -93,33 +123,33 @@
             int Resolve;
 
             //calculate them, using the primary attributes collected above
-            Awareness = Agility + Perception;
-            Toughness = Strength + Vigour;
-            Resolve = Intellect + Will;
+            //Awareness = stats[0] + stats[3];
+            //Toughness = Strength + Vigour;
+            //Resolve = Intellect + Will;
 
 
-            //    Use Console.Clear() before displaying.
-            //Change Console.ForegroundColor and/ or Console.BackgroundColor.
-            Console.BackgroundColor = ConsoleColor.Gray;
-            Console.ForegroundColor = ConsoleColor.DarkBlue;
-            Console.Clear();
-            //Add a custom Console.Title.
-            Console.Title = "Character Sheet: " + characterName;
+            ////    Use Console.Clear() before displaying.
+            ////Change Console.ForegroundColor and/ or Console.BackgroundColor.
+            //Console.BackgroundColor = ConsoleColor.Gray;
+            //Console.ForegroundColor = ConsoleColor.DarkBlue;
+            //Console.Clear();
+            ////Add a custom Console.Title.
+            //Console.Title = "Character Sheet: " + characterName;
 
-            //Display nicely formatted output(extra \n or multiple Console.WriteLine).
-            //Create ASCII dividers(dashed lines) to separate the CharacterName, Primary Attributes and Secondary Attributes.
-            //formatted strings because im fancy like that
-            Console.WriteLine("\n{0}", characterName);
-            Console.WriteLine("---------------------------");
-            Console.WriteLine("AGI: {0,2:D2} | STR: {1,2:D2}", Agility, Strength);
-            Console.WriteLine("VIG: {0,2:D2} | PER: {1,2:D2}", Vigour, Perception);
-            Console.WriteLine("INT: {0,2:D2} | WIL: {1,2:D2}", Intellect, Will);
-            Console.WriteLine("---------------------------");
-            //these can hit 100, but since theres no second column to worry about, no min length required
-            Console.WriteLine("AWARENESS: {0,3}", Awareness);
-            Console.WriteLine("TOUGHNESS: {0,3}", Toughness);
-            Console.WriteLine("  RESOLVE: {0,3}", Resolve);
-            Console.WriteLine("---------------------------");
+            ////Display nicely formatted output(extra \n or multiple Console.WriteLine).
+            ////Create ASCII dividers(dashed lines) to separate the CharacterName, Primary Attributes and Secondary Attributes.
+            ////formatted strings because im fancy like that
+            //Console.WriteLine("\n{0}", characterName);
+            //Console.WriteLine("---------------------------");
+            //Console.WriteLine("AGI: {0,2:D2} | STR: {1,2:D2}", Agility, Strength);
+            //Console.WriteLine("VIG: {0,2:D2} | PER: {1,2:D2}", Vigour, Perception);
+            //Console.WriteLine("INT: {0,2:D2} | WIL: {1,2:D2}", Intellect, Will);
+            //Console.WriteLine("---------------------------");
+            ////these can hit 100, but since theres no second column to worry about, no min length required
+            //Console.WriteLine("AWARENESS: {0,3}", Awareness);
+            //Console.WriteLine("TOUGHNESS: {0,3}", Toughness);
+            //Console.WriteLine("  RESOLVE: {0,3}", Resolve);
+            //Console.WriteLine("---------------------------");
 
 
         }
