@@ -9,7 +9,8 @@
             Vigour,
             Perception,
             Intellect,
-            Will
+            Will,
+            Luck
         }
 
         static void Main(string[] args)
@@ -18,16 +19,9 @@
             
             //variables representing the character
             string characterName;
-            
+
+            string[] statNames;
             int[] stats;
-            //int Agility;
-            //int Strength;
-            //int Vigour;
-            //int Perception;
-            //int Intellect;
-            //int Will;
-
-
 
             //stats[int value] starting at 0
             //stats = 10; (this would cause an error)
@@ -35,7 +29,8 @@
             //console.writeling(stats[0]) prints 10 to the console.
 
             //[0,0,0,0,0,0];
-            stats = new int[6];
+            stats = new int[7];
+            statNames = ["Agility", "Strength", "Vigour", "Perception", "Intellect", "Will", "Luck"];
             
             //Console.WriteLine(stats[6]);
 
@@ -52,70 +47,35 @@
             //}
 
             //for(
-            //int i = 0; //declare a variable which controls the loop
-            //i < 5; //set a condition to continue or exit the loop
-            //i++ //once the loop happens, how to we continue towards ending the loop
+            //int i = 0;    //declare a variable which controls the loop
+            //i < 5;        //set a condition to continue or exit the loop
+            //i++           //once the loop happens, how to we continue towards ending the loop
             //    ) {
             //}
 
             // i++; is the same as writing i += 1;
 
-            Console.WriteLine(stats[0]);
-            Console.WriteLine(stats[1]);
-            Console.WriteLine(stats[2]);
-            Console.WriteLine(stats[3]);
-            Console.WriteLine(stats[4]);
-            Console.WriteLine(stats[5]);
+            //Console.WriteLine(stats[0]);
+            //Console.WriteLine(stats[1]);
+            //Console.WriteLine(stats[2]);
+            //Console.WriteLine(stats[3]);
+            //Console.WriteLine(stats[4]);
+            //Console.WriteLine(stats[5]);
 
-            for (int i = 0; i < 6; i++)
+            for (int i = 0; i < stats.Length; i++)
             {
-                Console.WriteLine($"Enter Character Stat: ");
+                Console.WriteLine($"Enter Character {statNames[i]}: ");
                 stats[i] = Convert.ToInt32(Console.ReadLine());
                 stats[i] = Math.Clamp(stats[i], 15, 50);
             }
 
-            Console.WriteLine(stats[0]);
-            Console.WriteLine(stats[1]);
-            Console.WriteLine(stats[2]);
-            Console.WriteLine(stats[3]);
-            Console.WriteLine(stats[4]);
-            Console.WriteLine(stats[5]);
 
-            //Console.WriteLine("Hello!");
-            //Console.WriteLine("Hello!");
-            //Console.WriteLine("Hello!");
-            //Console.WriteLine("Hello!");
-            //Console.WriteLine("Hello!");
-
-            ////prompt the user for the character stats (Agility)
-            //Console.WriteLine("Enter Character Agility: ");
-            //Agility = Convert.ToInt32(Console.ReadLine());
-            //Agility = Math.Clamp(Agility, 15, 50);
-
-            ////prompt the user for the character stats (Strength)
-            //Console.WriteLine("Enter Character Strength: ");
-            //Strength = Convert.ToInt32(Console.ReadLine());
-            //Strength = Math.Clamp(Strength, 15, 50);
-
-            ////prompt the user for the character stats (Vigour)
-            //Console.WriteLine("Enter Character Vigour: ");
-            //Vigour = Convert.ToInt32(Console.ReadLine());
-            //Vigour = Math.Clamp(Vigour, 15, 50);
-
-            ////prompt the user for the character stats (Perception)
-            //Console.WriteLine("Enter Character Perception: ");
-            //Perception = Convert.ToInt32(Console.ReadLine());
-            //Perception = Math.Clamp(Perception, 15, 50);
-
-            ////prompt the user for the character stats (Intellect)
-            //Console.WriteLine("Enter Character Intellect: ");
-            //Intellect = Convert.ToInt32(Console.ReadLine());
-            //Intellect = Math.Clamp(Intellect, 15, 50);
-
-            ////prompt the user for the character stats (Will)
-            //Console.WriteLine("Enter Character Will: ");
-            //Will = Convert.ToInt32(Console.ReadLine());
-            //Will = Math.Clamp(Will, 15, 50);
+            //Console.WriteLine(stats[0]);
+            //Console.WriteLine(stats[1]);
+            //Console.WriteLine(stats[2]);
+            //Console.WriteLine(stats[3]);
+            //Console.WriteLine(stats[4]);
+            //Console.WriteLine(stats[5]);
 
             //secondary attributes
             int Awareness;
@@ -147,6 +107,7 @@
             Console.WriteLine("AGI: {0,2:D2} | STR: {1,2:D2}", stats[(int)STATS.Agility], stats[(int)STATS.Strength]);
             Console.WriteLine("VIG: {0,2:D2} | PER: {1,2:D2}", stats[(int)STATS.Vigour], stats[(int)STATS.Perception]);
             Console.WriteLine("INT: {0,2:D2} | WIL: {1,2:D2}", stats[(int)STATS.Intellect], stats[(int)STATS.Will]);
+            Console.WriteLine("LUC: {0,2:D2}", stats[(int)STATS.Luck]);
             Console.WriteLine("---------------------------");
             //these can hit 100, but since theres no second column to worry about, no min length required
             Console.WriteLine("AWARENESS: {0,3}", Awareness);
