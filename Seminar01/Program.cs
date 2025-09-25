@@ -22,32 +22,32 @@
             //prompt the user for the character stats (Agility)
             Console.WriteLine("Enter Character Agility: ");
             Agility = Convert.ToInt32(Console.ReadLine());
-            Agility = Math.Clamp(Agility, 5, 50);
+            Agility = Math.Clamp(Agility, 15, 50);
 
             //prompt the user for the character stats (Strength)
             Console.WriteLine("Enter Character Strength: ");
             Strength = Convert.ToInt32(Console.ReadLine());
-            Strength = Math.Clamp(Strength, 5, 50);
+            Strength = Math.Clamp(Strength, 15, 50);
 
             //prompt the user for the character stats (Vigour)
             Console.WriteLine("Enter Character Vigour: ");
             Vigour = Convert.ToInt32(Console.ReadLine());
-            Vigour = Math.Clamp(Vigour, 5, 50);
+            Vigour = Math.Clamp(Vigour, 15, 50);
 
             //prompt the user for the character stats (Perception)
             Console.WriteLine("Enter Character Perception: ");
             Perception = Convert.ToInt32(Console.ReadLine());
-            Perception = Math.Clamp(Perception, 5, 50);
+            Perception = Math.Clamp(Perception, 15, 50);
 
             //prompt the user for the character stats (Intellect)
             Console.WriteLine("Enter Character Intellect: ");
             Intellect = Convert.ToInt32(Console.ReadLine());
-            Intellect = Math.Clamp(Intellect, 5, 50);
+            Intellect = Math.Clamp(Intellect, 15, 50);
 
             //prompt the user for the character stats (Will)
             Console.WriteLine("Enter Character Will: ");
             Will = Convert.ToInt32(Console.ReadLine());
-            Will = Math.Clamp(Will, 5, 50);
+            Will = Math.Clamp(Will, 15, 50);
 
             //secondary attributes
             int Awareness;
