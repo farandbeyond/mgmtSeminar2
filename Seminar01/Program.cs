@@ -15,9 +15,47 @@
             int Intellect;
             int Will;
 
+            int[] stats;
+            //stats[int value] starting at 0
+            //stats = 10; (this would cause an error)
+            //stats[0] = 10; (this causes the first value in the stats array to become 10
+            //console.writeling(stats[0]) prints 10 to the console.
+            
+            
+            
             //prompt the user for the Name
             Console.WriteLine("Enter Character Name: ");
             characterName = Console.ReadLine();
+
+            //if (condition) {
+            //   do something here
+            //}
+
+            //for( a number of times){
+            //    do something
+            //}
+
+            //for(
+            //int i = 0; //declare a variable which controls the loop
+            //i < 5; //set a condition to continue or exit the loop
+            //i++ //once the loop happens, how to we continue towards ending the loop
+            //    ) {
+            //}
+
+            // i++; is the same as writing i += 1;
+
+            for (int i = 0; i< 5; i++)
+            {
+                Console.WriteLine("Enter Character Agility: ");
+                Agility = Convert.ToInt32(Console.ReadLine());
+                Agility = Math.Clamp(Agility, 15, 50);
+            }
+
+            //Console.WriteLine("Hello!");
+            //Console.WriteLine("Hello!");
+            //Console.WriteLine("Hello!");
+            //Console.WriteLine("Hello!");
+            //Console.WriteLine("Hello!");
 
             //prompt the user for the character stats (Agility)
             Console.WriteLine("Enter Character Agility: ");
