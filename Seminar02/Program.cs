@@ -15,67 +15,27 @@
 
         static void Main(string[] args)
         {
-            //Console.WriteLine("Hello, World!");
-            
             //variables representing the character
             string characterName;
 
             string[] statNames;
             int[] stats;
 
-            //stats[int value] starting at 0
-            //stats = 10; (this would cause an error)
-            //stats[0] = 10; (this causes the first value in the stats array to become 10
-            //console.writeling(stats[0]) prints 10 to the console.
-
-            //[0,0,0,0,0,0];
+            //initialing the stat array(s)
             stats = new int[7];
             statNames = ["Agility", "Strength", "Vigour", "Perception", "Intellect", "Will", "Luck"];
-            
-            //Console.WriteLine(stats[6]);
 
             //prompt the user for the Name
             Console.WriteLine("Enter Character Name: ");
             characterName = Console.ReadLine();
 
-            //if (condition) {
-            //   do something here
-            //}
-
-            //for( a number of times){
-            //    do something
-            //}
-
-            //for(
-            //int i = 0;    //declare a variable which controls the loop
-            //i < 5;        //set a condition to continue or exit the loop
-            //i++           //once the loop happens, how to we continue towards ending the loop
-            //    ) {
-            //}
-
-            // i++; is the same as writing i += 1;
-
-            //Console.WriteLine(stats[0]);
-            //Console.WriteLine(stats[1]);
-            //Console.WriteLine(stats[2]);
-            //Console.WriteLine(stats[3]);
-            //Console.WriteLine(stats[4]);
-            //Console.WriteLine(stats[5]);
-
+            //for each stat in the array, prompt the user and get the stat (between 15 and 50)
             for (int i = 0; i < stats.Length; i++)
             {
                 Console.WriteLine($"Enter Character {statNames[i]}: ");
                 stats[i] = Convert.ToInt32(Console.ReadLine());
                 stats[i] = Math.Clamp(stats[i], 15, 50);
             }
-
-
-            //Console.WriteLine(stats[0]);
-            //Console.WriteLine(stats[1]);
-            //Console.WriteLine(stats[2]);
-            //Console.WriteLine(stats[3]);
-            //Console.WriteLine(stats[4]);
-            //Console.WriteLine(stats[5]);
 
             //secondary attributes
             int Awareness;
