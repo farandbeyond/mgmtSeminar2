@@ -4,29 +4,43 @@ namespace Seminars
 {
     internal class Program
     {
-        enum STATS
+        static void prepareConsoleForCharacterSheet()
         {
-            Agility,
-            Strength,
-            Vigour,
-            Perception,
-            Intellect,
-            Will,
-            Luck
+            //Use Console.Clear() before displaying.
+            //Change Console.ForegroundColor and/ or Console.BackgroundColor.
+            Console.BackgroundColor = ConsoleColor.Gray;
+            Console.ForegroundColor = ConsoleColor.DarkBlue;
+            Console.Clear();
+            //Add a custom Console.Title.
+            Console.Title = "Character Sheet";
+        }
+        public static string promptUser(string message)
+        {
+            Console.WriteLine(message);
+            string result = Console.ReadLine();
+            if (result != null)
+            {
+                return result;
+            }
+            else
+            {
+                return "";
+            }
         }
 
         public static void Main(string[] args)
         {
             //variables representing the character
-            string characterName;
+            //string characterName;
 
-            string[] statNames;
-            int[] stats;
+            //string[] statNames;
+            //int[] stats;
 
-            //initialing the stat array(s)
-            stats = new int[7];
-            statNames = ["Agility", "Strength", "Vigour", "Perception", "Intellect", "Will", "Luck"];
+            ////initialing the stat array(s)
+            //stats = new int[7];
+            //statNames = ["Agility", "Strength", "Vigour", "Perception", "Intellect", "Will", "Luck"];
 
+            //defining a method:
             //public (or specific non-public keyword)
             //static (or leave it blank)
             //void (or a return type)
@@ -38,39 +52,7 @@ namespace Seminars
             //    int advancedStat = stat1 + stat2;
             //    return advancedStat;
             //}
-            static int calculateSecondaryStat(int[] stats, STATS stat1, STATS stat2)
-            {
-                int advancedStat = stats[(int)stat1] + stats[(int)stat2];
-                return advancedStat;
-            }
-            static void displayCharacterSheet(string characterName, int[] stats, int Awareness, int Toughness, int Resolve)
-            {
-                //Display nicely formatted output(extra \n or multiple Console.WriteLine).
-                //Create ASCII dividers(dashed lines) to separate the CharacterName, Primary Attributes and Secondary Attributes.
-                //formatted strings because im fancy like that
-                Console.WriteLine("\n{0}", characterName);
-                Console.WriteLine("---------------------------");
-                Console.WriteLine("AGI: {0,2:D2} | STR: {1,2:D2}", stats[(int)STATS.Agility], stats[(int)STATS.Strength]);
-                Console.WriteLine("VIG: {0,2:D2} | PER: {1,2:D2}", stats[(int)STATS.Vigour], stats[(int)STATS.Perception]);
-                Console.WriteLine("INT: {0,2:D2} | WIL: {1,2:D2}", stats[(int)STATS.Intellect], stats[(int)STATS.Will]);
-                Console.WriteLine("LUC: {0,2:D2}", stats[(int)STATS.Luck]);
-                Console.WriteLine("---------------------------");
-                //these can hit 100, but since theres no second column to worry about, no min length required
-                Console.WriteLine("AWARENESS: {0,3}", Awareness);
-                Console.WriteLine("TOUGHNESS: {0,3}", Toughness);
-                Console.WriteLine("  RESOLVE: {0,3}", Resolve);
-                Console.WriteLine("---------------------------");
-            }
-            static void prepareConsoleForCharacterSheet()
-            {
-                //Use Console.Clear() before displaying.
-                //Change Console.ForegroundColor and/ or Console.BackgroundColor.
-                Console.BackgroundColor = ConsoleColor.Gray;
-                Console.ForegroundColor = ConsoleColor.DarkBlue;
-                Console.Clear();
-                //Add a custom Console.Title.
-                Console.Title = "Character Sheet";
-            }
+
 
             //Console.WriteLine(calculateSecondaryStat(5, 10));
             //Console.WriteLine(calculateSecondaryStat(15, 20));
@@ -78,40 +60,41 @@ namespace Seminars
 
 
             //prompt the user for the Name
-            Console.WriteLine("Enter Character Name: ");
-            characterName = Console.ReadLine();
+            //Console.WriteLine("Enter Character Name: ");
+            //characterName = Console.ReadLine();
+            //characterName = promptUser("Enter Character Name: ");
 
-            //for each stat in the array, prompt the user and get the stat (between 15 and 50)
-            for (int i = 0; i < stats.Length; i++)
-            {
-                Console.WriteLine($"Enter Character {statNames[i]}: ");
-                stats[i] = Convert.ToInt32(Console.ReadLine());
-                stats[i] = Math.Clamp(stats[i], 15, 50);
-            }
+            ////for each stat in the array, prompt the user and get the stat (between 15 and 50)
+            //for (int i = 0; i < stats.Length; i++)
+            //{
+            //    //Console.WriteLine($"Enter Character {statNames[i]}: ");
+            //    //stats[i] = Convert.ToInt32(Console.ReadLine());
+            //    stats[i] = Convert.ToInt32(promptUser($"Enter Character {statNames[i]}: "));
+            //    stats[i] = Math.Clamp(stats[i], 15, 50);
+            //}
 
-            //secondary attributes
-            int Awareness;
-            int Toughness;
-            int Resolve;
+            ////secondary attributes
+            //int Awareness;
+            //int Toughness;
+            //int Resolve;
 
-            //defining a method:
-            
+            ////calculate them, using the primary attributes collected above
+            ////Awareness = Agility + Perception
+            ////Awareness = stats[(int)STATS.Agility] + stats[(int)STATS.Perception];
+            //Awareness = CharacterSheet.calculateSecondaryStat(stats, STATS.Agility, STATS.Perception);
+            ////Toughness = Strength + Vigour;
+            //Toughness = CharacterSheet.calculateSecondaryStat(stats, STATS.Strength, STATS.Vigour);
+            ////Resolve = Intellect + Will;
+            //Resolve = CharacterSheet.calculateSecondaryStat(stats, STATS.Intellect, STATS.Will);
 
-
-
-            //calculate them, using the primary attributes collected above
-            //Awareness = Agility + Perception
-            //Awareness = stats[(int)STATS.Agility] + stats[(int)STATS.Perception];
-            Awareness = calculateSecondaryStat(stats, STATS.Agility, STATS.Perception);
-            //Toughness = Strength + Vigour;
-            Toughness = calculateSecondaryStat(stats, STATS.Strength, STATS.Vigour);
-            //Resolve = Intellect + Will;
-            Resolve = calculateSecondaryStat(stats, STATS.Intellect, STATS.Will);
-
+            CharacterSheet partyMember1;
+            partyMember1 = new CharacterSheet();
+            //CharacterSheet partyMember2 = new CharacterSheet();
 
             prepareConsoleForCharacterSheet();
-            displayCharacterSheet(characterName, stats, Awareness, Toughness, Resolve);
-            displayCharacterSheet("Connor", [15, 10, 70, 14, 60, 30, 45], 10, Toughness, 100);
+            partyMember1.displayCharacterSheet();
+            //displayCharacterSheet(partyMember1.CharacterName, partyMember1.Stats, partyMember1.Awareness, partyMember1.Toughness, partyMember1.Resolve);
+            //displayCharacterSheet("Connor", [15, 10, 70, 14, 60, 30, 45], 10, Toughness, 100);
         }
     }
 }
